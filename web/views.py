@@ -15,7 +15,7 @@ def search(request):
         status=""
         content=""
         num = request.POST.get('number')
-        number_col = excel_file['Mobile Number ']
+        number_col = excel_file['Mobile_Number']
         ind=-1
         for i in range(len(number_col)):
             try:
