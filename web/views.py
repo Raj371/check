@@ -1,17 +1,16 @@
 from django.shortcuts import render
 import pandas as pd
 import numpy as np
+from django.conf import settings
 # Create your views here.
-excel_file = ""
+
 def base(request):
-    file = pd.read_excel('Test_Sheet.xlsx')
-    global excel_file
-    excel_file = file
-    print(excel_file)
+    
     return render(request , 'web/base.html')
 
 def search(request):
     if request.method == 'POST':
+        excel_file = pd.read_excel(settings.BASE_DIR/'Test_Sheet.xlsx')
         status=""
         content=""
         num = request.POST.get('number')
