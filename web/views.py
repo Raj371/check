@@ -33,7 +33,3 @@ def search(request):
 
     return render(request , 'web/search.html' , context)
 
-def add(request):
-    if request.method == 'POST':
-        return render(request , 'web/add.html')   
-    return render(request , 'web/add.html')
