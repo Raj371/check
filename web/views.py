@@ -15,12 +15,14 @@ def search(request):
         content=""
         num = request.POST.get('number')
         number_col = excel_file['Mobile_Number']
+        email_col = excel_file['Email']
+        print(email_col[0])
         ind=-1
         for i in range(len(number_col)):
             try:
                 c=str((int)(number_col[i]))
-                if (num) == c:
-
+                e=str(email_col[i])
+                if (num) == c or (num) == e:
                     ind = i
             except :
                 print("Exception")
